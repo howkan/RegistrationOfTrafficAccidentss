@@ -1,0 +1,71 @@
+﻿<Window x:Class="RegistrationOfTrafficAccidents.View.Buttons.Delete"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistrationOfTrafficAccidents.View.Buttons"
+        mc:Ignorable="d" Icon="/Assets/Dtp.ico" Style="{DynamicResource WindowStyle}"
+        Title="Удалить" Height="244.424" Width="525.5" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Button.Background" Value="Transparent" />
+                <Setter Property="Button.FontFamily" Value="Verdana" />
+                <Setter Property="Button.Margin" Value="10" />
+            </Style.Setters>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="IsPressed" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="Foreground" Value="Red" />
+                        <Setter Property="Cursor" Value="Hand"/>
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="577*"/>
+            <ColumnDefinition Width="108*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="375*"/>
+            <RowDefinition Height="24*"/>
+        </Grid.RowDefinitions>
+
+       
+
+        <DockPanel  Grid.Column="1" Grid.Row="1" LastChildFill="False">
+            <TextBlock DockPanel.Dock="Top" Margin="0,13,0,0" HorizontalAlignment="Center" FontSize="28"
+                           Text="Удалить"  Style="{DynamicResource TextBlockStyle}"
+                           ></TextBlock>
+
+
+
+            <TextBlock DockPanel.Dock="Top" Margin="0,13,0,0"
+                           Text="ID"  Style="{DynamicResource TextBlockStyle}">
+
+            </TextBlock>
+
+            <TextBox x:Name="Id_Box" DockPanel.Dock="Top" Style="{DynamicResource TextBox}"></TextBox>
+
+
+            <Button  DockPanel.Dock="Top" Margin="0,13,0,0"  Style="{DynamicResource ButtonStyle}"
+                         Width="250" Height="40" BorderThickness="1" 
+                         Content="Удалить" Click="go_save" Background="Transparent"/>
+        </DockPanel>
+
+    </Grid>
+</Window>

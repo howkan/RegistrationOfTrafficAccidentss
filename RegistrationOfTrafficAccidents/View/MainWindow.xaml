@@ -1,0 +1,68 @@
+﻿<mah:MetroWindow x:Class="RegistrationOfTrafficAccidents.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistrationOfTrafficAccidents.View"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d" Icon="/Assets/Dtp.ico"
+        WindowStartupLocation="CenterScreen" Style="{DynamicResource WindowStyle}"
+        Title="Меню" Height="700" Width="900">
+    
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="137*"/>
+            <ColumnDefinition Width="584*"/>
+            <ColumnDefinition Width="71*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="92*"/>
+            <RowDefinition Height="404*"/>
+            <RowDefinition Height="73*"/>
+        </Grid.RowDefinitions>
+
+
+        <Border BorderBrush="#b2b6c2" BorderThickness="2" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">
+            <DockPanel  Margin="4,4,4,4">
+                <Ellipse Width="50" Height="50" DockPanel.Dock="Top" >
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Assets/User.png" Stretch="UniformToFill"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock DockPanel.Dock="Bottom" 
+                           FontFamily="/Font/#Cramaten" 
+                           FontSize="30" Style="{DynamicResource TextBlockStyle}"
+                           HorizontalAlignment="Center">User</TextBlock>
+            </DockPanel>
+        </Border>
+
+        
+        
+        <Border Grid.Column="0" Grid.Row="1" BorderBrush="#b2b6c2" BorderThickness="2">
+            <DockPanel  LastChildFill="False">
+                <Button DockPanel.Dock="Top" Height="45" Background="Transparent" Click="Click_Add" Style="{DynamicResource ButtonStyle}">Добавить</Button>
+                <Button DockPanel.Dock="Top" Height="45" Background="Transparent" Click="Click_Find" Style="{DynamicResource ButtonStyle}">Найти</Button>
+                <Button DockPanel.Dock="Top" Height="45" Background="Transparent" Click="Click_Change" Style="{DynamicResource ButtonStyle}">Сменить пользователя</Button>
+                <Button DockPanel.Dock="Top" Height="45" Background="Transparent" Click="Click_Exit" Style="{DynamicResource ButtonStyle}">Выйти</Button>
+            </DockPanel>
+        </Border>
+
+        <ComboBox x:Name="styleBox" Grid.Column="0" Grid.Row="2" Foreground="Black" />
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock FontSize="80" Style="{DynamicResource TextBlockStyle}"
+                       FontFamily="/Fonts/#Cramaten"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">Регистрация ДТп</TextBlock>
+        </StackPanel>
+
+        <DockPanel Grid.Column="1" Grid.Row="1">
+            <DataGrid x:Name="incidents" SelectionChanged="incidents_SelectionChanged">
+                    
+            </DataGrid>
+        </DockPanel>
+
+    </Grid>
+</mah:MetroWindow>
